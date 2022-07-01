@@ -6,8 +6,8 @@ const http=require("http");
 const path=require("path");
 
 //Important declarations
-const hostname='0.0.0.0';
-const port=80;
+// const hostname='0.0.0.0';
+const port=process.env.PORT || 80;
 // const dbURL="mongodb://localhost:27017/confessionDB";
 const dbURL=`mongodb+srv://admin-user:jpYdGmuZtNZ8kcQ0@mongodb-confession.tlj9tt5.mongodb.net/confessionDB?retryWrites=true&w=majority`;
 
@@ -31,7 +31,7 @@ app.set('views', path.join(__dirname, 'views'));
 //Connect to database
 mongoose.connect(dbURL)
 .then(()=>{
-    app.listen(port, hostname, ()=>{
+    app.listen(port, ()=>{
         // console.log(`Server started at http://${hostname}:${port}/`);
         console.log("Server Started");
     });
