@@ -1,0 +1,52 @@
+style.
+    @import url('https://fonts.googleapis.com/css2?family=Arima&family=Finlandica:ital,wght@1,500&family=Lobster&family=Play&family=Raleway&display=swap');
+    .navigation {
+        /* background-image: linear-gradient(to bottom, #141e30, #243b55); */
+        background: transparent;
+        color: white
+    }
+    .navItem
+    {
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+        margin-right: 12px;
+        vertical-align: center;
+        transition: all 0.2s;
+    }
+    .navItem:hover{
+        color: rgb(250, 131, 151);
+    }
+    .logo
+    {
+        margin-left: 12px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+    .logoHead 
+    {
+        vertical-align: center;
+        margin-left: 6px;
+        font-family: 'Finlandica', sans-serif;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+<nav class="navbar navbar-expand-lg navigation navbar-dark">
+    img(src='../static/assets/pingu-stare.gif' alt='Site Logo' class='logo')
+    <span class="logoHead">HOT&nbsp;&nbsp;CONFESSIONS</span>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="navItem" href="/">&#127968;Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="navItem" href="/all-confessions">&#x1F92B;See all Confessions</a>
+            </li>
+        </ul>
+    </div>
+</nav>

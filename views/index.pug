@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hot Confessions</title>
+
+    <!-- Bootstrap CDN -->
+    link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet")
+
+    <!-- Custom CSS -->
+    link(href="../static/index.css" rel="stylesheet")
+</head>
+
+<body>
+    <div class="modal-bg">
+        <div class="modal-content">
+            <h2 class="text-center my-3">Welcome to Hot Confessions</h2>
+            <span class="text-center span1">The one and only stop for all NSECians to confess their heart out!</span>
+            <p id="modal-p1">Before you begin flooding the entire site with your confessions, make sure to abide by the following:</p>
+            <ul>
+                <li>DO NOT disclose your personal information. Taking care of your privacy is your responsibility</li>
+                <li>DO NOT write yours' or anyone else's name at the end of a confession. Doing so will lead to removal of that confession</li>
+            </ul>
+            <p>That's it for the Do's and Don'ts. Now give your consent to proceed</p>
+            <div>
+                <label for="chk" style="display: inline-block">
+                    <input type="checkbox" name="chk" id="chk" onchange="toggleGoBtn()">
+                    <span>Yes, I'm in</span>
+                </label>
+            </div>
+            <button type="button" id="go" disabled>Let's Go!</button>
+        </div>
+    </div>
+    <div class="container-fluid">
+        include ../includes/_nav.pug
+        
+        
+
+
+        <!-- Cool Boxes -->
+        <ul class="boxes">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+
+        <div class="row d-flex justify-content-center mt-4 mb-2">
+            <h3 class="heading">Confess something here</h3>
+        </div>
+
+        <!-- Confession box -->
+        <div class="row d-flex justify-content-center">
+            <form action="/" method="post" id="confession-form">
+                <input type="hidden" name="user" id="user-id">
+                <textarea name="confession" id="confession" placeholder="Your confession will stay Anonymous"></textarea>
+                <button id="submit-btn" type="button" onclick="submitCheck()">Submit</button>
+            </form>
+
+        </div>
+
+        
+    </div>
+
+    <!-- Bootstrap JS and JQUERY-->
+    script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js")
+    script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js")
+    <!-- Custom JS -->
+    script(src="../static/index.js")
+
+</body>
+
+</html>

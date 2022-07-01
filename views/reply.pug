@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hot Confessions | All Confessions</title>
+
+    <!-- Bootstrap CDN -->
+    link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet")
+    <!-- Font Awesome CDN -->
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css")
+    <!-- Custom CSS -->
+    link(href="../static/reply.css" rel="stylesheet")
+</head>
+
+<body>
+    include ../includes/_nav.pug
+    <div class="container-fluid">
+        <!-- Cool Boxes -->
+        <ul class="boxes">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div class="row confession" id=#{confession_id}>#{confession}</div>
+        <div class="row my-3">
+            <div class="col-md-8 d-flexbox justify-content-center repliesDiv">
+                if (reply.length==0)
+                    <h4 class="text-center">No Comments yet</h4>
+                each element in reply
+                    <div class="replies">#{element.reply_txt}</div>
+            </div>
+            <div class="col-md-4 d-flex justify-content-center">
+                <form>
+                    <div class="form-div">
+                        <!-- <input type="text" class="inputField" placeholder="Comment here"> -->
+                        <textarea name="comment" class="inputField" rows="5" placeholder="Comment here. Your Comment will also remain anonymous"></textarea>
+                        <button type="button" class="comment_btn" onclick="submitComment()"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and JQUERY-->
+    script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js")
+    script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js")
+    
+    <!-- Custom JS -->
+    script(src="../static/reply.js")
+
+</body>
+
+</html>

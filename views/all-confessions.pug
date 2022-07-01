@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hot Confessions | All Confessions</title>
+
+    <!-- Bootstrap CDN -->
+    link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet")
+
+    <!-- Custom CSS -->
+    link(href="../static/all-confessions.css" rel="stylesheet")
+</head>
+
+<body>
+    include ../includes/_nav.pug
+    <div class="container-fluid">
+        <!-- Cool Boxes -->
+        <ul class="boxes">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <div class="row d-flex justify-content-center my-3">
+            <input type="text" placeholder="&#128269; Search for a confession" id="search" onkeyup="searchNow(this)">
+        </div>
+
+            if result.length==0
+                h1.NoResults No confessions yet. Be the first one to initiate! 
+            else
+                <div class="row d-flex justify-content-center" id="showingConfessionsRow">
+                    each element in result
+                        <div class="col-md-4 confession-block" id=#{element._id} onclick='replySectionTrigger(this)'>#{element.text}</div>
+                </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and JQUERY-->
+    script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js")
+    script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js")
+    <!-- Custom JS -->
+    script(src="../static/all-confessions.js")
+
+</body>
+
+</html>
